@@ -1,189 +1,61 @@
-# QHE4103 Fundamentals of Web Technology Coursework Project
-## Online Car Sale Website
-Group Project Repository
+# QHE4103 Online Car Sale Website
 
-This project is developed for the **Fundamentals of Web Technology** coursework.
-The goal is to design and implement an **Online Car Sale** website, where sellers can register, log in, and add car advertisements, while buyers can search for cars by model and year.
+Static frontend for a high-end used-car sales coursework project.
 
-The project is divided into two phases:
+## How to Open
 
-- **Phase A**: Front-end development with HTML, CSS, and JavaScript
-- **Phase B**: Back-end development with PHP, MySQL, and session handling
+This branch is a pure HTML/CSS/JavaScript static site.
 
-This branch contains the current **Next.js App Router** frontend implementation for Member 1's public integration scope: global layout, navigation, footer, shared visual shell, and the premium homepage presentation for a high-end used-car platform.
+No Node.js setup is required. Do not run `npm install`, `npm run dev`, or `npm run build`.
 
----
+Recommended local preview:
 
-## Quick Start
+1. Open the folder in VS Code.
+2. Install or use the Live Server extension.
+3. Open `index.html` with Live Server.
 
-1. Install dependencies:
+Direct browser opening also works for the homepage:
 
-   ```bash
-   npm install
-   ```
+```text
+index.html
+```
 
-2. Run the development server:
+## Project Structure
 
-   ```bash
-   npm run dev
-   ```
+```text
+index.html              Homepage owned by Member 1
+pages/                  Static shells for teammate pages
+assets/css/styles.css   Shared visual system
+assets/js/main.js       Small shared interactions
+assets/images/          Homepage image assets
+```
 
-3. Open the local site:
+## Member Responsibilities
 
-   ```text
-   http://localhost:3000
-   ```
-
----
-
-## Frontend Notes
-
-This branch uses:
-
-- **Next.js App Router** under `src/app/`
-- **React client components** only where browser APIs or interactivity are needed
-- **Tailwind CSS** through the global stylesheet setup
-- **Lenis** for shared smooth scrolling
-- Shared layout components in `src/components/layout/`
-- Homepage-specific components in `src/components/home/`
-
-Member 1 owns the public shell and homepage integration work. Other members should continue building only their assigned business pages and should not duplicate the global navigation, footer, or page shell inside their own route files.
-
----
-
-## Route Ownership
-
-All routes live under `src/app/`.
-
-| Route | File | Owner |
+| Member | GitHub Username | Responsibility |
 |---|---|---|
-| `/` | `src/app/page.js` | Member 1 - Homepage / public presentation |
-| `/register` | `src/app/register/page.js` | Member 2 - Seller registration |
-| `/login` | `src/app/login/page.js` | Member 3 - Login / session flow |
-| `/seller` | `src/app/seller/page.js` | Member 3 - Seller flow |
-| `/search` | `src/app/search/page.js` | Member 4 - Car search |
-| `/add-car` | `src/app/add-car/page.js` | Member 4 - Add car |
-| `/car/[id]` | `src/app/car/[id]/page.js` | Member 4 - Car detail |
+| Member 1 | `wangchaoyu` | Homepage, shared navigation, footer, visual shell, responsive layout |
+| Member 2 | `luojingyu` | Seller registration content inside `pages/register.html` |
+| Member 3 | `juzi` | Login and seller flow content inside `pages/login.html` and `pages/seller.html` |
+| Member 4 | `taogefei` | Search, add-car, and car detail content inside `pages/search.html`, `pages/add-car.html`, and `pages/car-detail.html` |
 
-If a page needs React state, effects, DOM APIs, or event handlers, add `"use client"` as the first line of that page or component.
+## Collaboration Rules
 
----
+- Member 1 maintains `index.html`, `assets/css/styles.css`, `assets/js/main.js`, global navigation, footer, and public shell.
+- Other members should add their business page content inside the marked content area in their assigned page.
+- Do not duplicate global navigation or footer markup inside a business page.
+- Coordinate before changing shared styles in `assets/css/styles.css`.
 
-## Team Members
+## Current Pages
 
-| Member | GitHub Username | Role |
-|---|---|---|
-| Member 1 | `wangchaoyu` | Project Integration / Public Pages |
-| Member 2 | `luojingyu` | Seller Registration Developer |
-| Member 3 | `juzi` | Login / Session / Seller Flow Developer |
-| Member 4 | `taogefei` | Car Data / Search Developer |
-
----
-
-## Task Allocation
-
-### Member 1 - `wangchaoyu`
-**Main Responsibility:** Project integration, public pages, and team coordination
-
-**Phase A**
-- Develop the **Homepage**
-- Build the **main navigation structure**
-- Maintain **consistent global styles**
-- Support the **responsive layout framework**
-- Integrate all front-end pages together
-
-**Phase B**
-- Coordinate **project integration**
-- Help with **overall database design**
-- Maintain shared **header/footer** and common layout
-- Organize the **presentation video**
-- Collect and prepare final submission materials
-
----
-
-### Member 2 - `luojingyu`
-**Main Responsibility:** Seller Registration
-
-**Phase A**
-- Design and implement the **Seller Registration page UI**
-- Complete **client-side validation** using **RegEx**
-
-**Phase B**
-- Design and maintain the **sellers** table
-- Implement **seller registration data insertion**
-- Display **successful registration messages**
-- Test the complete registration workflow
-
----
-
-### Member 3 - `juzi`
-**Main Responsibility:** Login / Session / Seller Flow
-
-**Phase A**
-- Design and implement the **Login page**
-- Connect the **seller flow** between related pages
-
-**Phase B**
-- Implement **login authentication**
-- Manage **session handling**
-- Redirect users to the **seller page / add car page** after successful login
-- Implement basic **access control**
-
----
-
-### Member 4 - `taogefei`
-**Main Responsibility:** Car Data / Search
-
-**Phase A**
-- Design and implement the **Add Car page**
-- Design and implement the **Search page**
-- Build the **search result display**
-- Build the **car detail page**
-
-**Phase B**
-- Design and maintain the **cars** table
-- Implement **add car data insertion**
-- Implement **search function with database queries**
-- Connect the **result page** and **detail page** with database data
-
----
-
-## Collaboration Workflow
-
-This project follows a GitHub collaboration workflow:
-
-- `main` branch: stable and deployable version
-- `develop` branch: integration branch
-- `feature/*` branches: individual feature development
-
-Each member works on their own feature branch and merges changes into `develop` through pull requests.
-
----
-
-## Project Features
-
-### Phase A
-- Responsive homepage
-- Shared navigation and footer shell
-- Seller registration form
-- Login page
-- Add car page
-- Search page
-- Search result and detail display
-- Client-side form validation
-
-### Phase B
-- MySQL database for sellers and cars
-- Seller registration with database storage
-- Login authentication
-- Session handling
-- Add car with database storage
-- Search function with database queries
-
----
+- `index.html`
+- `pages/register.html`
+- `pages/login.html`
+- `pages/seller.html`
+- `pages/search.html`
+- `pages/add-car.html`
+- `pages/car-detail.html`
 
 ## Notes
 
-- All members contribute through GitHub commits and feature branches.
-- Weekly meetings are recorded in the meeting minutes.
-- The final project includes both development process evidence and functional demonstration.
+The project was converted from Next.js/React to static HTML/CSS/JavaScript so every teammate can open and edit the project without framework configuration.
