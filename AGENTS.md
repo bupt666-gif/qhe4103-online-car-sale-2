@@ -1,5 +1,11 @@
-<!-- BEGIN:nextjs-agent-rules -->
-# This is NOT the Next.js you know
+# Agent Guidance
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
-<!-- END:nextjs-agent-rules -->
+This project is a pure HTML/CSS/vanilla JS static site.
+
+- Do not run `npm install`, `npm run dev`, or any build step for normal development.
+- There is no Next.js, React, or Tailwind build setup.
+- Open `index.html` directly in a browser, or use Live Server/static server if local serving is needed.
+- Member 1 owns `index.html`, shared nav/footer, `assets/css/styles.css`, `assets/js/main.js`, and the public shell.
+- Other members own business content inside marked sections in `pages/*.html`.
+- Coordinate shared CSS/JS changes before editing common styles or behavior.
+- Do not add framework dependencies unless the team explicitly agrees.
