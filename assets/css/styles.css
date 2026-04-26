@@ -119,6 +119,41 @@ ul {
   min-height: 100vh;
 }
 
+.site-page-shell {
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255, 61, 127, 0.24), transparent 30%),
+    radial-gradient(circle at 82% 16%, rgba(0, 180, 216, 0.22), transparent 28%),
+    radial-gradient(circle at 70% 84%, rgba(64, 230, 154, 0.22), transparent 30%),
+    linear-gradient(135deg, #fff7dd 0%, #eefcff 45%, #fff2f7 100%);
+}
+
+.member-page {
+  display: grid;
+  align-items: center;
+  min-height: calc(100vh - var(--nav-height) - 8rem);
+  padding: clamp(3.5rem, 8vw, 7rem) 0;
+}
+
+.member-page__panel {
+  padding: clamp(2rem, 6vw, 4.5rem);
+}
+
+.member-page h1 {
+  max-width: 12ch;
+  margin-top: 0.85rem;
+  font-size: clamp(2.7rem, 9vw, 6.8rem);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+}
+
+.member-page p {
+  max-width: 42rem;
+  margin-top: 1.2rem;
+  color: var(--color-ink-soft);
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  line-height: 1.75;
+}
+
 .site-navbar {
   position: sticky;
   top: 0;
