@@ -115,7 +115,7 @@ ul {
 .site-canvas {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
+  overflow-x: clip;
   min-height: 100vh;
 }
 
