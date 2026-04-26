@@ -302,10 +302,12 @@ body.nav-open .mobile-nav-toggle span:nth-child(3) {
   pointer-events: none;
   transform: translateY(-0.75rem) scale(0.98);
   transform-origin: top center;
+  visibility: hidden;
   backdrop-filter: blur(24px) saturate(1.15);
   transition:
     opacity 220ms ease,
-    transform 260ms var(--ease-premium);
+    transform 260ms var(--ease-premium),
+    visibility 0s linear 260ms;
 }
 
 .site-nav--mobile a,
@@ -320,6 +322,8 @@ body.nav-open .mobile-nav,
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0) scale(1);
+  visibility: visible;
+  transition-delay: 0s;
 }
 
 .home-root {
