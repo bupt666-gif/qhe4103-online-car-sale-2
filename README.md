@@ -1,6 +1,8 @@
 # QHE4103 Online Car Sale Website
 
 Static frontend for a high-end used-car sales coursework project.
+This project is developed for the **Fundamentals of Web Technology** coursework.
+The goal is to design and implement an **Online Car Sale** website, where sellers can register, log in, and add car advertisements, while buyers can search for cars by model and year.
 
 ## How to Open
 
