@@ -32,10 +32,10 @@
   window.addEventListener('scroll', setScrolledState, { passive: true });
   setScrolledState();
 
-  const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+  const currentFile = window.location.pathname.split('/').pop() || 'index.php';
   document.querySelectorAll('[data-nav-link]').forEach((link) => {
     const href = link.getAttribute('href') || '';
-    const hrefFile = href.split('#')[0].split('/').pop() || 'index.html';
+    const hrefFile = href.split('#')[0].split('/').pop() || 'index.php';
     link.classList.toggle('is-active', hrefFile === currentFile);
   });
 
@@ -92,95 +92,3 @@
     }, { passive: true });
   }
 })();
-
-const addCarForm = document.getElementById('addCarForm');
-const formMessage = document.getElementById('formMessage');
-
-if (addCarForm && formMessage) {
-  addCarForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    const color = document.getElementById('color').value.trim();
-    const brand = document.getElementById('brand').value.trim();
-    const model = document.getElementById('model').value.trim();
-    const year = document.getElementById('year').value.trim();
-    const price = document.getElementById('price').value.trim();
-    const location = document.getElementById('location').value.trim();
-    const condition = document.getElementById('condition').value.trim();
-
-    formMessage.classList.remove('is-success');
-
-    if (!color) {
-      formMessage.textContent = 'Please enter the car color.';
-      return;
-    }
-
-    if (!brand) {
-      formMessage.textContent = 'Please enter the car brand.';
-      return;
-    }
-
-    if (!model) {
-      formMessage.textContent = 'Please enter the car model.';
-      return;
-    }
-
-    if (!year) {
-      formMessage.textContent = 'Please enter the car year.';
-      return;
-    }
-
-    if (Number(year) < 1900 || Number(year) > 2026) {
-      formMessage.textContent = 'Please enter a valid year.';
-      return;
-    }
-
-    if (!price) {
-      formMessage.textContent = 'Please enter the car price.';
-      return;
-    }
-
-    if (Number(price) <= 0) {
-      formMessage.textContent = 'Price must be greater than 0.';
-      return;
-    }
-
-    if (!location) {
-      formMessage.textContent = 'Please enter the car location.';
-      return;
-    }
-
-    if (!condition) {
-      formMessage.textContent = 'Please enter the car condition.';
-      return;
-    }
-
-    formMessage.textContent = 'Car added successfully!';
-    formMessage.classList.add('is-success');
-    addCarForm.reset();
-  });
-}
-
-const searchForm = document.getElementById('searchForm');
-const searchMessage = document.getElementById('searchMessage');
-
-if (searchForm && searchMessage) {
-  searchForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    const model = document.getElementById('model').value.trim().toLowerCase();
-    const year = document.getElementById('year').value.trim();
-
-    if (!model && !year) {
-      searchMessage.textContent = 'Please enter at least a model or a year.';
-      return;
-    }
-
-    searchMessage.textContent = '';
-
-    localStorage.setItem('searchModel', model);
-    localStorage.setItem('searchYear', year);
-
-    window.location.href = 'car-detail.html';
-  });
-}

@@ -1,33 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AutoSphere | Premium Used Cars</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-<body>
-  <header class="site-navbar" data-site-navbar>
-    <a class="site-logo" href="index.html" aria-label="AutoSphere home">AutoSphere</a>
-    <nav class="desktop-nav" aria-label="Primary navigation">
-      <a href="pages/search.html" data-nav-link>Search</a>
-      <a href="pages/add-car.html" data-nav-link>Add Car</a>
-      <a href="pages/register.html" data-nav-link>Register</a>
-      <a href="pages/login.html" data-nav-link>Login</a>
-    </nav>
-    <button class="mobile-nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle>
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" data-mobile-nav>
-      <a href="pages/search.html" data-nav-link>Search</a>
-      <a href="pages/add-car.html" data-nav-link>Add Car</a>
-      <a href="pages/register.html" data-nav-link>Register</a>
-      <a href="pages/login.html" data-nav-link>Login</a>
-    </nav>
-  </header>
-
+<?php
+$pageTitle = 'AutoSphere | Premium Used Cars';
+$basePath = '.';
+$currentPage = 'index.php';
+require_once __DIR__ . '/includes/header.php';
+?>
   <main class="home-root">
     <span class="holographic-bg holographic-bg-one" aria-hidden="true"></span>
     <span class="holographic-bg holographic-bg-two" aria-hidden="true"></span>
@@ -45,8 +21,8 @@
           A quieter way to discover premium used vehicles, with verified sellers, clear ownership signals, and inventory presented like a modern showroom.
         </p>
         <div class="hero-actions">
-          <a class="button button-primary" href="pages/search.html">Browse Inventory</a>
-          <a class="button button-secondary" href="pages/add-car.html">Sell With AutoSphere</a>
+          <a class="button button-primary" href="<?php echo htmlspecialchars($sitePath('/pages/search.php'), ENT_QUOTES, 'UTF-8'); ?>">Browse Inventory</a>
+          <a class="button button-secondary" href="<?php echo htmlspecialchars($sitePath('/pages/add-car.php'), ENT_QUOTES, 'UTF-8'); ?>">Sell With AutoSphere</a>
         </div>
       </div>
       <figure class="hero-media">
@@ -117,7 +93,7 @@
           <li>Clear ownership, mileage, and condition storytelling.</li>
           <li>A guided path from buyer interest to trusted handoff.</li>
         </ul>
-        <a class="button button-primary" href="pages/add-car.html">Start Listing</a>
+        <a class="button button-primary" href="<?php echo htmlspecialchars($sitePath('/pages/add-car.php'), ENT_QUOTES, 'UTF-8'); ?>">Start Listing</a>
       </div>
       <aside class="sell-support" aria-label="Seller studio highlights">
         <p class="sell-support__label">Seller Studio</p>
@@ -149,29 +125,6 @@
       </aside>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <div class="footer-intro">
-      <a class="site-logo" href="index.html">AutoSphere</a>
-      <p>Premium used cars presented with calmer browsing, stronger trust cues, and a more intentional showroom experience.</p>
-    </div>
-    <nav class="footer-group" aria-label="Browse links">
-      <h2>Browse</h2>
-      <a href="pages/search.html">Search</a>
-      <a href="#inventory">Featured Cars</a>
-    </nav>
-    <nav class="footer-group" aria-label="Sell links">
-      <h2>Sell</h2>
-      <a href="pages/add-car.html">Add Car</a>
-      <a href="pages/register.html">Seller Account</a>
-    </nav>
-    <nav class="footer-group" aria-label="Account links">
-      <h2>Account</h2>
-      <a href="pages/register.html">Register</a>
-      <a href="pages/login.html">Login</a>
-    </nav>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
+<?php
+require_once __DIR__ . '/includes/footer.php';
+?>
